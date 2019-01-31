@@ -1,0 +1,25 @@
+{
+    "name": "Character counter",
+    "description": "Counting character in text area",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "browser_action": {
+        "default_title": "文字数カウント",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2,
+    "background": {
+        "scripts":["counter.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["keydown_send.js"]
+        }
+    ]
+    
+}
+  
