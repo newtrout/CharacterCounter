@@ -10,17 +10,13 @@ window.addEventListener("keyup", function () {
         } else {
             document.activeElement.insertAdjacentHTML('afterend', '<p id="charactercounter">' + ev_len + '<p>');
             insert_counter = true;
-            console.log(insert_counter);
         }
     } else {
         insert_counter = false;
-        console.log(insert_counter);
-
     }
 });
 
 document.activeElement.addEventListener("focusout", function () {
-    // console.log("blur動いてるよ");
     if (insert_counter) {
         document.getElementById("charactercounter").remove();
         insert_counter = false;
